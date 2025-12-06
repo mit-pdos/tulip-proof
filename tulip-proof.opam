@@ -1,0 +1,30 @@
+opam-version: "2.0"
+license: "MIT"
+maintainer: "Tej Chajed"
+authors: "Tulip authors"
+homepage: "https://github.com/mit-pdos/tulip-proof"
+bug-reports: "https://github.com/mit-pdos/tulip-proof/issues"
+dev-repo: "git+https://github.com/mit-pdos/tulip-proof.git"
+version: "dev"
+synopsis: "Verification of tulip"
+
+depends: [
+  "perennial-old"
+]
+
+pin-depends: [
+  ["perennial-old.dev"         "git+https://github.com/mit-pdos/perennial#9e14ce4ce1"]
+
+  ## begin indirect
+  ["coq-record-update.dev"     "git+https://github.com/tchajed/coq-record-update#7b26452103"]
+  ["iris-named-props.dev"      "git+https://github.com/tchajed/iris-named-props#c388714a93"]
+  ["rocq-iris.dev"             "git+https://gitlab.mpi-sws.org/iris/iris#d8f049ee6e"]
+  ["rocq-stdpp.dev"            "git+https://gitlab.mpi-sws.org/iris/stdpp#a09c2a19de"]
+  ## end
+]
+
+build: [make "-j%{jobs}%"]
+install: ["go" "tool" "perennial-cli" "install"]
+build-env: [
+  [GOCACHE = "%{build}%/_build/.gocache"]
+]
