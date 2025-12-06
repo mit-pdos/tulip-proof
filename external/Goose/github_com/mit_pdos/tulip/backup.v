@@ -699,12 +699,6 @@ Definition BackupGroupCoordinator__Abort: val :=
       Continue);;
     #().
 
-Definition BackupGroupCoordinator__ConnectAll: val :=
-  rec: "BackupGroupCoordinator__ConnectAll" "gcoord" :=
-    ForSlice uint64T <> "rid" (struct.loadF BackupGroupCoordinator "rps" "gcoord")
-      (BackupGroupCoordinator__Connect "gcoord" "rid");;
-    #().
-
 Definition BackupTxnCoordinator := struct.decl [
   "ts" :: uint64T;
   "rank" :: uint64T;
@@ -728,14 +722,6 @@ Definition Start: val :=
       "proph" ::= "proph"
     ] in
     "tcoord".
-
-(* @Connect tries to create connections with all the replicas in each
-   participant group. *)
-Definition BackupTxnCoordinator__ConnectAll: val :=
-  rec: "BackupTxnCoordinator__ConnectAll" "tcoord" :=
-    MapIter (struct.loadF BackupTxnCoordinator "gcoords" "tcoord") (λ: <> "gcoord",
-      BackupGroupCoordinator__ConnectAll "gcoord");;
-    #().
 
 Definition BackupTxnCoordinator__stabilize: val :=
   rec: "BackupTxnCoordinator__stabilize" "tcoord" :=

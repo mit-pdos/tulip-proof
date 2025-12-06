@@ -591,21 +591,6 @@ Definition Replica__Applier: val :=
         Continue));;
     #().
 
-Definition Replica__StartBackupTxnCoordinator: val :=
-  rec: "Replica__StartBackupTxnCoordinator" "rp" "ts" :=
-    Mutex__Lock (struct.loadF Replica "mu" "rp");;
-    let: "rank" := (Fst (MapGet (struct.loadF Replica "rktbl" "rp") "ts")) + #1 in
-    let: "ptgs" := Fst (MapGet (struct.loadF Replica "ptgsm" "rp") "ts") in
-    let: "cid" := struct.mk tulip.CoordID [
-      "GroupID" ::= struct.loadF Replica "gid" "rp";
-      "ReplicaID" ::= struct.loadF Replica "rid" "rp"
-    ] in
-    let: "tcoord" := backup.Start "ts" "rank" "cid" "ptgs" (struct.loadF Replica "gaddrm" "rp") (struct.loadF Replica "leader" "rp") (struct.loadF Replica "proph" "rp") in
-    backup.BackupTxnCoordinator__ConnectAll "tcoord";;
-    Mutex__Unlock (struct.loadF Replica "mu" "rp");;
-    backup.BackupTxnCoordinator__Finalize "tcoord";;
-    #().
-
 (* For debugging and evaluation purpose. *)
 Definition Replica__DumpState: val :=
   rec: "Replica__DumpState" "rp" "gid" :=

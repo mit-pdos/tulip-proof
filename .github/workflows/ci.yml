@@ -28,3 +28,16 @@ jobs:
         run: opam install --assume-built .
       - name: opam uninstall
         run: opam uninstall .
+
+  check-goose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: "go.mod"
+      - name: check goose output
+        run: |
+          git clone --depth=1 https://github.com/mit-pdos/tulip ~/tulip
+          ./etc/update-goose.sh ~/tulip
+          git diff --exit-code
