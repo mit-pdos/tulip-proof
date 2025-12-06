@@ -39,5 +39,5 @@ jobs:
       - name: check goose output
         run: |
           git clone --depth=1 https://github.com/mit-pdos/tulip ~/tulip
-          ./etc/update-goose.sh ~/tulip
+          ./etc/update-goose.sh --tulip ~/tulip
           git diff --exit-code
