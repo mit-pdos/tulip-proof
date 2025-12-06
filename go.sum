@@ -9,6 +9,8 @@ github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/mit-pdos/perennial-cli v0.3.0 h1:v8Ts2m+HtYgrwcKrXEGIxRqwIXrhB8POy6oG9CogTRE=
 github.com/mit-pdos/perennial-cli v0.3.0/go.mod h1:Q+AapH+j0TJb/XyL/XE34dsejgag6Gt/Z7irfERjWHU=
+github.com/mit-pdos/perennial-cli v0.3.1 h1:XGlZIUBelBHMO5EaOOialfecV+3hknqyaer3lYVWq7M=
+github.com/mit-pdos/perennial-cli v0.3.1/go.mod h1:Q+AapH+j0TJb/XyL/XE34dsejgag6Gt/Z7irfERjWHU=
 github.com/pb33f/ordered-map/v2 v2.3.0 h1:k2OhVEQkhTCQMhAicQ3Z6iInzoZNQ7L9MVomwKBZ5WQ=
 github.com/pb33f/ordered-map/v2 v2.3.0/go.mod h1:oe5ue+6ZNhy7QN9cPZvPA23Hx0vMHnNVeMg4fGdCANw=
 github.com/pelletier/go-toml/v2 v2.2.4 h1:mye9XuhQ6gvn5h28+VilKrrPoQVanw5PMw/TB0t5Ec4=
