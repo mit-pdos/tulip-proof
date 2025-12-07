@@ -1,0 +1,8 @@
+(include_subdirs qualified)
+(coq.theory
+ (name Perennial.program_proof)
+ (package tulip-proof)
+ (theories Stdlib Ltac2 stdpp iris
+           coqutil RecordUpdate iris_named_props
+           Goose Goose.github_com.mit_pdos Perennial))
+

@@ -1,0 +1,17 @@
+(env
+ (_ ; Applies to all profiles (dev, release, ...).
+  (coq
+   ; Configure coqc flags.
+   (flags (:standard %{read-lines:flags.dune})))))
+
+(rule
+ (action
+  (with-stdout-to flags.dune
+   (pipe-stdout
+    (cat _RocqProject)
+    ; delete comments
+    (bash "sed -E -e '/^#/d'")
+    ; get only args (not logical paths)
+    (bash "grep -o -- '-arg [^ ]*'")
+    (bash "sed -E -e 's/-arg //'")))))
+
