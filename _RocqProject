@@ -1,5 +1,7 @@
 -Q src Perennial
 -Q external/Goose Goose
+-Q _build/default/src Perennial
+-Q _build/default/external/Goose Goose
 -arg -w -arg +deprecated-instance-without-locality
 # don't allow ambiguous coercions
 -arg -w -arg +ambiguous-paths

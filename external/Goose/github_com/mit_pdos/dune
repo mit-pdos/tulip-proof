@@ -1,0 +1,8 @@
+(include_subdirs qualified)
+(coq.theory
+ (name Goose.github_com.mit_pdos)
+ (package tulip-code)
+ (theories Stdlib Ltac2 stdpp iris
+           coqutil RecordUpdate iris_named_props
+           Perennial Goose))
+

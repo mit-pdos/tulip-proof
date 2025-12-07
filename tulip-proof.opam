@@ -6,7 +6,7 @@ homepage: "https://github.com/mit-pdos/tulip-proof"
 bug-reports: "https://github.com/mit-pdos/tulip-proof/issues"
 dev-repo: "git+https://github.com/mit-pdos/tulip-proof.git"
 version: "dev"
-synopsis: "Verification of tulip"
+synopsis: "Program proofs for tulip"
 
 depends: [
   "perennial-old"
@@ -23,8 +23,5 @@ pin-depends: [
   ## end
 ]
 
-build: [make "-j%{jobs}%"]
-install: ["go" "tool" "perennial-cli" "install"]
-build-env: [
-  [GOCACHE = "%{build}%/_build/.gocache"]
-]
+build: ["dune" "build"]
+install: ["dune" "install"]

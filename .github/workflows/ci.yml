@@ -21,7 +21,7 @@ jobs:
           opam pin add --no-action .
           opam install --deps-only .
       - name: Rocq build
-        run: make -j4
+        run: dune build
       - name: opam install
         run: opam install --assume-built .
       - name: opam uninstall
