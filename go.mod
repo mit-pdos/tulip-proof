@@ -1,6 +1,6 @@
 module tulip-proof
 
-go 1.25.5
+go 1.24.10
 
 tool (
 	github.com/goose-lang/goose/cmd/goose
