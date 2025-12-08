@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/mit-pdos/tulip-proof/actions/workflows/ci.yml/badge.svg)](https://github.com/mit-pdos/tulip-proof/actions/workflows/ci.yml)
 
-Program proofs for [tulip](https://github.com/mit-pdos/tulip), using [Perennial](https://github.com/mit-pdos/perennial).
+Program proofs for [tulip](https://github.com/mit-pdos/tulip), using [Perennial](https://github.com/mit-pdos/perennial) (the "old" version, prior to new goose).
 
-Note: these proofs are built using the "old" version of Goose. They depend on the perennial-old.opam file.
+To build run `opam install --deps-only .` and then `dune build`.
+
+You can update the version of perennial used with `go tool perennial-cli opam update`.
